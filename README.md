@@ -51,3 +51,4 @@ As a fresh beginner in Elixir, I've crossed with many useful pages that helped m
 * [Errors and Exceptions](https://learnyousomeerlang.com/errors-and-exceptions)
 * [Money Library Documentation](https://hexdocs.pm/money/Money.html)
 * [Building an Elixir Project in Travis-CI](https://docs.travis-ci.com/user/languages/elixir/)
+* [Learn Travis in Elixir](https://github.com/dwyl/learn-travis#elixir-lang-project)
