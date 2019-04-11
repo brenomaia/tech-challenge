@@ -87,4 +87,24 @@ defmodule FinancialSystemTest do
     assert Money.Currency.exists?(:BRL) == true
     assert Money.Currency.exists?(:NNEE) == false
   end
+
+  test "User cannot transfer to many accounts if the shares don't sum 1.0", %{
+    account_a: origin_acc ,
+    account_b: acc_b,
+    account_c: acc_c
+  } do
+
+    list = [
+      acc_b,
+      acc_c
+    ]
+
+    assert_raise ArgumentError, fn -> 
+      FinancialSystem.transfer_to_many(origin_acc, list, 1000, [0.5, 0.2]) 
+    end
+  end
+
+  test "User cannot exchange money to the same currency", %{account_a: account} do
+    assert_raise ArgumentError, fn -> FinancialSystem.convert_account(account, :BRL, 1) end
+  end
 end
