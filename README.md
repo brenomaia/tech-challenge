@@ -12,11 +12,11 @@ Also, to deal with money and stay in compliance with [ISO 4217](https://pt.wikip
 
 ## Dependencies
 
-*[Credo](https://github.com/rrrene/credo) - For code consistency through static code analysis.
-*[ExCoveralls](https://github.com/parroty/excoveralls) - Reports test coverage statistics, showing wich lines of code are actually being tested.
-*[Money](linhttps://github.com/elixirmoney/moneyk) - To help us deal with money in diferent currencies.
-*[ExDoc](https://github.com/elixir-lang/ex_doc) - Produces HTML documentation.
-*[Earmark](https://github.com/pragdave/earmark) - Markdown parser for Elixir, used by ExDoc to convert the documentation inside `@moduledoc` and `@doc`.
+[Credo](https://github.com/rrrene/credo) - For code consistency through static code analysis.
+[ExCoveralls](https://github.com/parroty/excoveralls) - Reports test coverage statistics, showing wich lines of code are actually being tested.
+[Money](linhttps://github.com/elixirmoney/moneyk) - To help us deal with money in diferent currencies.
+[ExDoc](https://github.com/elixir-lang/ex_doc) - Produces HTML documentation.
+[Earmark](https://github.com/pragdave/earmark) - Markdown parser for Elixir, used by ExDoc to convert the documentation inside `@moduledoc` and `@doc`.
 
 ## Usage
 
@@ -26,10 +26,10 @@ After that, you can clone this project and run the following command to install 
 `mix deps.get`
 
 Then, you'll be ready run to all these commands:
-* `iex -S mix` to run your application.
-* `mix test` to perform unitary tests.
-* `MIX_ENV=test mix coveralls` to show coverage information.
-* `MIX_ENV=test mix coveralls.detail` displays your coverage test in each file and highlighting the lines that are executed(green) and those that aren't(red).
+`iex -S mix` to run your application.
+`mix test` to perform unitary tests.
+`MIX_ENV=test mix coveralls` to show coverage information.
+`MIX_ENV=test mix coveralls.detail` displays your coverage test in each file and highlighting the lines that are executed(green) and those that aren't(red).
 
 ## Documentation
 For documentation, run `mix docs` to generate an HTML page with all the documentation of the project.
