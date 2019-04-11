@@ -14,7 +14,7 @@ Also, to deal with money and stay in compliance with [ISO 4217](https://pt.wikip
 
 * [Credo](https://github.com/rrrene/credo) - For code consistency through static code analysis.
 * [ExCoveralls](https://github.com/parroty/excoveralls) - Reports test coverage statistics, showing wich lines of code are actually being tested.
-* [Money](linhttps://github.com/elixirmoney/moneyk) - To help us deal with money in diferent currencies.
+* [Money](https://github.com/elixirmoney/moneyk) - To help us deal with money in diferent currencies.
 * [ExDoc](https://github.com/elixir-lang/ex_doc) - Produces HTML documentation.
 * [Earmark](https://github.com/pragdave/earmark) - Markdown parser for Elixir, used by ExDoc to convert the documentation inside `@moduledoc` and `@doc`.
 
