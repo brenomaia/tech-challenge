@@ -1,97 +1,53 @@
-# Tech Challenge 
+# Stone Tech Challenge - Financial System
 
-Bem vindo(a)! Esse é o Tech Challenge Elixir!
+Financial System made in elixir for the [Stone Tech Challenge](https://github.com/stone-payments/tech-challenge).
 
-Aqui você terá todas as informações para o sucesso do seu desafio. Ele consiste em aplicar a linguagem funcional Elixir. Não se preocupe! Não cobramos experiência prévia com essa linguagem. Junto com o desafio disponibilizamos um material para estudo.
+## Project
 
-Precisamos de pessoas com energia, integridade e inteligência, que aprendam rápido e que gostem de conhecer e aplicar novas tecnologias.
+The project is made to complete a challenge of creating a Financial System in compliance with [ISO 4217](https://pt.wikipedia.org/wiki/ISO_4217) that is able to perform basic functions like transfers between accounts(with possibility to split) and exchange currency. 
 
-O tempo sugerido para conclusão do desafio é de um mês, mas não é uma regra! Não temos prazo para entrega, queremos que você se dedique e demonstre a qualidade de seu código. Estamos mais interessados em observar a qualidade da solução do que o tempo que você vai demorar.
+Due to Floats having arithmetic problems, this project uses Integers to deal with money, always using the two last digits as cents. 
 
-Quando sua solução estiver pronta, envie um e-mail para tech.challenge@stone.com.br com o link do seu repositório no Github. Você receberá um e-mail com a confirmação de recebimento.
+Also, to deal with money and stay in compliance with [ISO 4217](https://pt.wikipedia.org/wiki/ISO_4217), the library [Money](https://github.com/elixirmoney/money) was used.
 
-Em seguida, enviaremos o feedback e as instruções dos próximos passos!
+## Dependencies
 
-Caso tenha alguma dúvida, nós estamos disponíveis no twitter @StonePagamentos através da #StoneTechChallenge
+[Credo](https://github.com/rrrene/credo) - For code consistency through static code analysis.
+[ExCoveralls](https://github.com/parroty/excoveralls) - Reports test coverage statistics, showing wich lines of code are actually being tested.
+[Money](linhttps://github.com/elixirmoney/moneyk) - To help us deal with money in diferent currencies.
+[ExDoc](https://github.com/elixir-lang/ex_doc) - Produces HTML documentation.
+[Earmark](https://github.com/pragdave/earmark) - Markdown parser for Elixir, used by ExDoc to convert the documentation inside `@moduledoc` and `@doc`.
 
-Bom desafio!
+## Usage
 
----
+You'll need to have [Elixir Installation](https://elixir-lang.org/install.html) completed on your computer.
 
-# O Desafio
+After that, you can clone this project and run the following command to install all the dependencies.
+`mix deps.get`
 
-O Sistema Financeiro precisa representar valores monetários. A ideia básica é ter uma estrutura de dados que permita realizar operações financeiras com dinheiro dentro de uma mesma moeda. _Isso é pelo motivo de pontos flutuantes terem problemas de aritmética_, logo encodificamos valores decimais/fracionais/reais como uma estrutura de dados com campos em inteiros, além de mapeamos operações aritméticas sobre tal estrutura. No fim, a implementação acaba sendo uma Estrutura de Dados Abstrata.
+Then, you'll be ready run to all these commands:
+`iex -S mix` to run your application.
+`mix test` to perform unitary tests.
+`MIX_ENV=test mix coveralls` to show coverage information.
+`MIX_ENV=test mix coveralls.detail` displays your coverage test in each file and highlighting the lines that are executed(green) and those that aren't(red).
 
-Essas operações financeiras precisam ser seguras e devem interromper a execução do programa em caso de erros críticos.
+## Documentation
+For documentation, run `mix docs` to generate an HTML page with all the documentation of the project.
 
-Sobre as operações financeiras que serão realizadas no sistema, é correto afirmar que os valores monetários devem suportar as seguintes operaçoes:
+## Continuous Integration
+This project also uses [Travis CI](www.travis-ci.com) for continuous integration.
 
-* O sistema realizará split de transações financeiras, então deve ser possível realizar a operação de rateio de valores monetários entre diferentes indivíduos.
-
-* O sistema permite realizar câmbio então os valores monetários possuem uma operação para conversão de moeda.
-
-* O sistema precisa estar em _compliance_ com as organizações internacionais, então é desejável estar em conformidade com a [ISO 4217](https://pt.wikipedia.org/wiki/ISO_4217).
-
-## Requisitos Técnicos
-
-* O código do desafio está na linguagem [Elixir](http://elixir-lang.github.io/)
-
-## Comandos básicos do projeto
-
-`iex -S mix` Para rodar em modo interativo
-
-`mix test` Para testar a aplicação
-
-## Diretrizes da aplicação
-
-- O candidato está livre para adicionar sua própria lógica desde que mantenha a estrutura base que foi proposta.
-
-#### Testes pré-programados
-
-- A lógica da aplicação deve contemplar os testes configurados na pasta `/test`
-
-- Toda lógica que for adicionada no projeto deve ser testada também. 
-
-## Critérios de Avaliação
-
-O desafio será avaliado através de cinco critérios.
-
-### Entrega
-
-* O código possui algum controle de dependências?
-* O resultado final está completo para ser executado?
-* O resultado final atende ao que se propõe fazer?
-* O resultado final atende totalmente aos requisitos propostos?
-
-### Boas Práticas
-
-* O código está de acordo com o guia de estilo do Elixir?
-* O código está bem estruturado?
-* O código está fluente na linguagem?
-* O código faz o uso correto de _Design Patterns_?
-
-### Documentação
-
-* O código foi entregue com um arquivo de README claro de como se guiar?
-* O código possui comentários pertinentes?
-* O código está em algum controle de versão?
-* Os commits são pequenos e consistentes?
-* As mensagens de commit são claras?
-
-### Código Limpo
-
-* O código possibilita expansão para novas funcionalidades?
-* O código é _Don't Repeat Yourself_?
-* O código é fácil de compreender?
-
-### Controle de Qualidade
-
-* O código possui configuração de lint?
-* O código possui testes unitários?
-* O código possui teste de cobertura?
-* O código está em Integração Contínua?
-
-## Material de Estudo
-* [Elixir School - Lições sobre a linguagem de programação Elixir](https://elixirschool.com/pt/)
-* [O Guia de Estilo Elixir](https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md)
+## Useful links
+As a fresh beginner in Elixir, I've crossed with many useful pages that helped me understand the language and create this project.
+* [Elixir School](https://elixirschool.com/pt/)
+* [O Guia de Estilo Elixir](https://elixirschool.com/pt/)
 * [Boas Práticas na Stone](https://github.com/stone-payments/stoneco-best-practices/blob/master/README_pt.md)
+* [Why Elixir in Banking](https://medium.com/margobank/why-elixir-546427542c)
+* [How to Read Specification in Elixir](https://stackoverflow.com/questions/54969816/how-to-read-specification-in-elixir)
+* [What Does Type T Mean in Elixir](https://stackoverflow.com/questions/29977776/what-does-type-t-module-mean-in-elixir)
+* [Typespecs and Behaviours](https://elixir-lang.org/getting-started/typespecs-and-behaviours.html)
+* [Struct para Encomenda](https://medium.com/@alvaroaze/elixir-structs-para-encomenda-e8949bd7df90)
+* [Why is Useful to Have an Atom Type Like in Elixir-Erlang](https://stackoverflow.com/questions/32261500/why-is-useful-to-have-a-atom-type-like-in-elixir-erlang)
+* [Errors and Exceptions](https://learnyousomeerlang.com/errors-and-exceptions)
+* [Money Library Documentation](https://hexdocs.pm/money/Money.html)
+* [Building an Elixir Project in Travis-CI](https://docs.travis-ci.com/user/languages/elixir/)
