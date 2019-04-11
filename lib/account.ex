@@ -24,4 +24,31 @@ defmodule FinancialSystem.Account do
     
     %{fullname: fullname, email: email, balance: balance, transfers: [transfer]}
   end
+
+  @spec withdraw(Account.t(), Money.t()) :: Account.t() | {:error, String.t()}
+  def withdraw(account, money) do
+    unless money.amount > 0 && money.amount <= account.balance.amount do
+      raise(ArgumentError, message: "You need to withdraw an integer equal or lower to current balance")
+    end
+
+    transfer = Transfer.create(%Money{amount: - money.amount, currency: money.currency})
+
+    account 
+    |> Map.put(:transfers, account.transfers ++ [transfer])
+    |> Map.put(:balance, Money.subtract(account.balance, money))
+    
+  end
+
+  @spec deposit(Account.t(), Money.t()) :: Account.t() | {:error, String.t} 
+  def deposit(account, money) do
+    unless money.amount > 0 do
+      raise(ArgumentError, message: "You need to deposit a value higher than 0")
+    end
+    
+    transfer = Transfer.create(money)
+
+    account 
+    |> Map.put(:transfers, account.transfers ++ [transfer])
+    |> Map.put(:balance, Money.add(account.balance, money))
+  end
 end
